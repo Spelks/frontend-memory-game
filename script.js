@@ -4,9 +4,11 @@ const htmlAnswers = document.querySelector(".html-answers");
 searchInput.addEventListener("keypress", (e)=> {
     if (e.key === "Enter") {
         const inputValue = searchInput.value.toLowerCase().replace(/[^a-z1-6]/g, "");
+        const index = htmlTags.indexOf(inputValue);
         if(htmlTags.includes(inputValue)) {
             guessedTags.push(inputValue);
             htmlAnswers.innerText += inputValue + "\n";
+            htmlTags.splice(index, 1);
         }
         searchInput.value = "";
     }
