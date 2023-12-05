@@ -95,10 +95,10 @@ body {
     color: #6a9955;
 }
 
-.line-numbers {
+.comment-number {
     color: #6e7681;
 }
 
-.html-answers {
+.answer-tag {
     color: #569cd6;
 }
