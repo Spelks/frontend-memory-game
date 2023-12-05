@@ -1,5 +1,5 @@
 const searchInput = document.querySelector(".search-input");
-const htmlAnswers = document.querySelector(".html-answers");
+const answerTag = document.querySelector(".answer-tag");
 const tagCount = document.querySelector(".tag-count");
 
 const guessedTags = [];
@@ -119,6 +119,7 @@ const htmlTags = [
   ];
 
 let arrayNumber = htmlTags.length;
+let lineNumber = 1;
 
 searchInput.addEventListener("keypress", (e)=> {
     if (e.key === "Enter") {
@@ -126,8 +127,9 @@ searchInput.addEventListener("keypress", (e)=> {
         const index = htmlTags.indexOf(inputValue);
         if(htmlTags.includes(inputValue)) {
             guessedTags.push(inputValue);
-            htmlAnswers.innerText += inputValue + "\n";
+            answerTag.innerText += `${lineNumber} ${"<"}${inputValue}${">"}` + "\n";
             htmlTags.splice(index, 1);
+            lineNumber++
             arrayNumber--;
             tagCount.innerText--;
         }
