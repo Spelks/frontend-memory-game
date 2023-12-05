@@ -1,18 +1,6 @@
 const searchInput = document.querySelector(".search-input");
 const htmlAnswers = document.querySelector(".html-answers");
-
-searchInput.addEventListener("keypress", (e)=> {
-    if (e.key === "Enter") {
-        const inputValue = searchInput.value.toLowerCase().replace(/[^a-z1-6]/g, "");
-        const index = htmlTags.indexOf(inputValue);
-        if(htmlTags.includes(inputValue)) {
-            guessedTags.push(inputValue);
-            htmlAnswers.innerText += inputValue + "\n";
-            htmlTags.splice(index, 1);
-        }
-        searchInput.value = "";
-    }
-});
+const tagCount = document.querySelector(".tag-count");
 
 const guessedTags = [];
 
@@ -129,3 +117,22 @@ const htmlTags = [
     "video",
     "wbr"
   ];
+
+let arrayNumber = htmlTags.length;
+
+searchInput.addEventListener("keypress", (e)=> {
+    if (e.key === "Enter") {
+        const inputValue = searchInput.value.toLowerCase().replace(/[^a-z1-6]/g, "");
+        const index = htmlTags.indexOf(inputValue);
+        if(htmlTags.includes(inputValue)) {
+            guessedTags.push(inputValue);
+            htmlAnswers.innerText += inputValue + "\n";
+            htmlTags.splice(index, 1);
+            arrayNumber--;
+            tagCount.innerText--;
+        }
+        searchInput.value = "";
+    }
+});
+
+tagCount.innerText = arrayNumber;
