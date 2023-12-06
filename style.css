@@ -8,7 +8,9 @@ body,
 .top-bar,
 .top-logo,
 .top-title,
-.main-container {
+.side-bar,
+.main-container,
+.menu-items {
     display: flex;
 }
 
@@ -21,7 +23,7 @@ body {
 .top-bar {
     background-color: #1f1f1f;
     border-bottom: 1px solid #2b2b2b;
-    padding: 10px;
+    padding: 5px 10px;
     justify-content: space-between;
     align-items: center;
 }
@@ -33,6 +35,22 @@ body {
 .top-logo img {
     width: 20px;
     height: 20px;
+}
+
+.menu-items {
+    padding: 0px 25px;
+    gap: 5px;
+    color: #cccccc;
+}
+
+.menu-items div {
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.menu-items div:hover {
+    background-color:#313232;
 }
 
 .top-title {
@@ -61,17 +79,37 @@ body {
     flex-grow: 1;
     background-color: #181818;
     width: 10%;
-    height: 100vh;
+    height: 95vh;
     border-right: 1px solid #2b2b2b;
-    padding: 20px;
     color: #cccccc;
 }
 
 .main-area {
     flex-grow: 2;
-    width: 80%;
+    width: 70%;
     background-color: #1f1f1f;
     padding: 10px 0 0 30px;
+}
+
+.icons {
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid #2b2b2b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #9b9b9b;
+    font-size: 1.7rem;
+    align-items: center;
+}
+
+.icons div:hover {
+    color: #e0e0e0;    
+}
+
+.explorer,
+.icons {
+    padding: 20px;
 }
 
 .explorer p {
@@ -95,8 +133,10 @@ body {
     color: #6a9955;
 }
 
-.comment-number {
+.comment-number,
+.number-tag {
     color: #6e7681;
+    /* color: #569cd6; */
 }
 
 .answer-tag {
