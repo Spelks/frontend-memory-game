@@ -13,12 +13,21 @@
 <body>
     <div class="top-bar">
         <div class="top-logo"><img src="VSCode.png"></div>
+        <div class="menu-items">
+            <div class="file-menu">File</div>
+            <div class="view-menu">View</div>
+            <div class="help-menu">Help</div>
+        </div>
         <div class="top-title">
             <input type="search" class="search-input" placeholder= "&#128269;&#xFE0E; Input HTML tags..." />
         </div>
     </div>
     <section class="main-container">
         <div class="side-bar">
+            <div class="icons">
+                <div class="side-bar-expand"><i class="fa fa-file-o" aria-hidden="true"></i></div>
+                <div class="side-bar-profile"><i class="fa fa-user-o" aria-hidden="true"></i></div>
+            </div>
             <div class="explorer">
                 <p><i class="fa fa-angle-down" aria-hidden="true"></i> MEMORY TEST</p>
                 <p class="index-html"><img src="html-icon.png"> index.html</p>
@@ -30,6 +39,7 @@
                 &lt;!-- Type html tags into the above search bar! Total Remaining: <span class="tag-count"></span> --&gt;
             </div>
             <div class="html-answers">
+                <span class="number-tag"></span>
                 <span class="answer-tag"></span>
             </div>
         </div>
