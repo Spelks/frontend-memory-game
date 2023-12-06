@@ -1,6 +1,11 @@
 const searchInput = document.querySelector(".search-input");
 const answerTag = document.querySelector(".answer-tag");
 const tagCount = document.querySelector(".tag-count");
+const sideBarExpand = document.querySelector(".side-bar-expand");
+const explorerBar = document.querySelector(".explorer-container");
+const memoryTest = document.querySelector(".memory-test");
+const indexHTML = document.querySelector(".index-html");
+const memoryTestIcon = document.querySelector(".memory-test i.fa");
 
 const guessedTags = [];
 
@@ -135,6 +140,18 @@ searchInput.addEventListener("keypress", (e)=> {
         }
         searchInput.value = "";
     }
+});
+
+sideBarExpand.addEventListener("click", ()=> {
+    explorerBar.classList.toggle("hide-explorer-bar");    
+})
+
+memoryTest.addEventListener("click", ()=> {
+    indexHTML.classList.toggle("hide-code-files");
+})
+
+memoryTest.addEventListener("click", ()=> {
+    memoryTestIcon.classList.toggle("rotate-icon");
 });
 
 tagCount.innerText = arrayNumber;
