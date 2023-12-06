@@ -75,25 +75,26 @@ body {
     transition: 0.5s;
 }
 
-.side-bar {
+.explorer-container {
     flex-grow: 1;
     background-color: #181818;
-    width: 10%;
+    width: 5%;
     height: 95vh;
     border-right: 1px solid #2b2b2b;
     color: #cccccc;
 }
 
-.main-area {
+.output-container {
     flex-grow: 2;
     width: 70%;
     background-color: #1f1f1f;
     padding: 10px 0 0 30px;
 }
 
-.icons {
-    width: 20%;
-    height: 100%;
+.icons-sub-container {
+    width: 3.5%;
+    height: 95vh;
+    background-color: #181818;
     border-right: 1px solid #2b2b2b;
     display: flex;
     flex-direction: column;
@@ -103,16 +104,20 @@ body {
     align-items: center;
 }
 
-.icons div:hover {
+.icons-sub-container div:hover {
     color: #e0e0e0;    
 }
 
-.explorer,
-.icons {
+.explorer-container,
+.icons-sub-container {
     padding: 20px;
 }
 
-.explorer p {
+.icons-sub-container div {
+    cursor: pointer;
+}
+
+.explorer-container p {
     cursor: pointer;
 }
 
@@ -141,4 +146,17 @@ body {
 
 .answer-tag {
     color: #569cd6;
+}
+
+/* class to toggle explorer bar on/off */
+.hide-explorer-bar {
+    display: none;
+}
+
+.hide-code-files {
+    display: none;
+}
+
+.rotate-icon {
+    transform: rotate(-90deg);
 }
