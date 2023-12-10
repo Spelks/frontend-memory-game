@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 body,
@@ -169,13 +170,20 @@ body {
 
 .file-item,
 .view-item,
-.help-item {
+.help-item,
+.side-bar-profile-item {
     position: absolute;
     background-color: #1f1f1f;
     border: 1px solid #454545;
     border-radius: 6px;
     padding: 10px 15px;
     display: none;
+}
+
+.side-bar-profile-item {
+    bottom: 60px;
+    left: 20px;
+    overflow: hidden;
 }
 
 .file-item:hover,
