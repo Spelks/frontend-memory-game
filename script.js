@@ -2,6 +2,8 @@ const searchInput = document.querySelector(".search-input");
 const answerTag = document.querySelector(".answer-tag");
 const tagCount = document.querySelector(".tag-count");
 const sideBarExpand = document.querySelector(".side-bar-expand");
+const sideBarProfile = document.querySelector(".side-bar-profile");
+const sideBarProfileItem = document.querySelector(".side-bar-profile-item");
 const explorerBar = document.querySelector(".explorer-container");
 const memoryTest = document.querySelector(".memory-test");
 const indexHTML = document.querySelector(".index-html");
@@ -12,6 +14,9 @@ const viewMenu = document.querySelector(".view-menu");
 const viewItem = document.querySelector(".view-item");
 const helpMenu = document.querySelector(".help-menu");
 const helpItem = document.querySelector(".help-item");
+const currentDate = document.querySelector(".current-date");
+
+currentDate.textContent = new Date().getFullYear();
 
 helpItem.addEventListener("click", ()=> {
     htmlTags.forEach(tag => {
@@ -35,14 +40,18 @@ helpMenu.addEventListener("click", ()=> {
     fileItem.classList.remove("show-file-item");
     viewItem.classList.remove("show-file-item");
 })
+sideBarProfile.addEventListener("click", ()=> {
+    sideBarProfileItem.classList.toggle("show-file-item");    
+})
 
 //close any pop-ups when clicking outside of them
 document.addEventListener("click", (event)=> {
-    const isDropdownActive = event.target.closest(".file-menu, .view-menu, .help-menu");
+    const isDropdownActive = event.target.closest(".file-menu, .view-menu, .help-menu, .side-bar-profile");
     if(!isDropdownActive) {
         fileItem.classList.remove("show-file-item");
         viewItem.classList.remove("show-file-item");
-        helpItem.classList.remove("show-file-item");        
+        helpItem.classList.remove("show-file-item");
+        sideBarProfileItem.classList.remove("show-file-item");      
     }
 })
 
