@@ -38,7 +38,7 @@ helpMenu.addEventListener("click", ()=> {
 
 //close any pop-ups when clicking outside of them
 document.addEventListener("click", (event)=> {
-    const isDropdownActive = event.target.closest(".file-menu, .file-iten, .view-menu, .view-item, .help-menu, .help-item");
+    const isDropdownActive = event.target.closest(".file-menu, .view-menu, .help-menu");
     if(!isDropdownActive) {
         fileItem.classList.remove("show-file-item");
         viewItem.classList.remove("show-file-item");
