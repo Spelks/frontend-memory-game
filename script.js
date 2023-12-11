@@ -15,6 +15,7 @@ const viewItem = document.querySelector(".view-item");
 const helpMenu = document.querySelector(".help-menu");
 const helpItem = document.querySelector(".help-item");
 const currentDate = document.querySelector(".current-date");
+const outputContainer = document.querySelector(".output-container");
 
 currentDate.textContent = new Date().getFullYear();
 
@@ -219,7 +220,8 @@ searchInput.addEventListener("keypress", (e)=> {
 });
 
 sideBarExpand.addEventListener("click", ()=> {
-    explorerBar.classList.toggle("hide-explorer-bar");    
+    explorerBar.classList.toggle("hide-explorer-bar");
+    outputContainer.classList.toggle("increase-output-margin");  
 })
 
 memoryTest.addEventListener("click", ()=> {
