@@ -15,11 +15,16 @@ body,
     display: flex;
 }
 
+.main-container {
+    margin-top: 38.9px;
+}
+
 body {
     font-family: 'Segoe UI Variable', 'Segoe UI', 'Roboto', sans-serif;
     background-color: #232323;
     flex-direction: column;
     user-select: none;
+    overflow-y: hidden; /* remove any scrollbars apart from the output container */
 }
 
 .top-bar {
@@ -28,6 +33,9 @@ body {
     padding: 5px 10px;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
 }
 
 .top-logo {
@@ -84,9 +92,11 @@ body {
     flex-grow: 1;
     background-color: #181818;
     width: 5%;
-    height: 95vh;
+    height: 96vh;
     border-right: 1px solid #2b2b2b;
     color: #cccccc;
+    margin-left: 3.5%;
+    z-index: 0;
 }
 
 .output-container {
@@ -96,11 +106,15 @@ body {
     background-color: #1f1f1f;
     padding: 10px 0 0 30px;
     user-select: text;
+    height: calc(100vh - 38.9px);
+    position: relative;
+    z-index: 2;
+    overflow-y: auto;
 }
 
 .icons-sub-container {
     width: 3.5%;
-    height: 95vh;
+    height: 96vh;
     background-color: #181818;
     border-right: 1px solid #2b2b2b;
     display: flex;
@@ -109,6 +123,9 @@ body {
     color: #9b9b9b;
     font-size: 1.7rem;
     align-items: center;
+    position: fixed;
+    top: 38.9px;
+    z-index: 3;
 }
 
 .icons-sub-container div:hover {
@@ -160,8 +177,9 @@ body {
     display: none;
 }
 
-.hide-code-files {
-    display: none;
+/* class to push output container to the left when memory test sidebar is hidden */
+.increase-output-margin {
+    margin-left: 3.5%;
 }
 
 .rotate-icon {
