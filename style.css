@@ -177,6 +177,11 @@ body {
     display: none;
 }
 
+/* class to hide html icon/text in explorer window */
+.hide-code-files {
+    display: none;
+}
+
 /* class to push output container to the left when memory test sidebar is hidden */
 .increase-output-margin {
     margin-left: 3.5%;
@@ -214,4 +219,25 @@ body {
 .show-view-item,
 .show-help-item {
     display: block;
+}
+
+@media only screen and (max-width: 1408px) {
+    .icons-sub-container {
+        display: none;
+    }
+    .explorer-container {
+        display: none;
+    }
+    .search-input {
+        min-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .menu-items {
+        display: none;
+    }
+    .search-input{
+        min-width: 60%;
+    }
 }
