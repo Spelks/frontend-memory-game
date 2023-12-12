@@ -245,4 +245,7 @@ body {
     .search-input{
         min-width: 60%;
     }
+    .desktop-text {
+        display: none;
+    }
 }
