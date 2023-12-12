@@ -1,5 +1,6 @@
 const searchInput = document.querySelector(".search-input");
-const answerTag = document.querySelector(".answer-tag");
+const answerTag = document.querySelector(".answer-tag"); //For user answers
+const helpTag = document.querySelector(".help-tag"); //For 'help' answers
 const tagCount = document.querySelector(".tag-count");
 const sideBarExpand = document.querySelector(".side-bar-expand");
 const sideBarProfile = document.querySelector(".side-bar-profile");
@@ -18,11 +19,22 @@ const currentDate = document.querySelector(".current-date");
 const outputContainer = document.querySelector(".output-container");
 
 currentDate.textContent = new Date().getFullYear();
+viewItem.textContent = "Full Screen";
+helpItem.textContent = "Add Remaining";
+
+let helpActive = false;
 
 helpItem.addEventListener("click", ()=> {
     htmlTags.forEach(tag => {
-        answerTag.innerText += `${"<"}${tag}${">"}` + "\n";
-    })  
+        if(!helpActive) {
+            helpTag.innerText += `${"<"}${tag}${">"}` + "\n";
+            helpItem.textContent = "Remove Remaining";
+        } else {
+            helpTag.innerText = "";
+            helpItem.textContent = "Add Remaining";
+        }
+    })
+    helpActive = !helpActive;
 })
 
 //Event listeners to show clicked dropdown and hide other open ones
@@ -52,7 +64,7 @@ document.addEventListener("click", (event)=> {
         fileItem.classList.remove("show-file-item");
         viewItem.classList.remove("show-file-item");
         helpItem.classList.remove("show-file-item");
-        sideBarProfileItem.classList.remove("show-file-item");      
+        sideBarProfileItem.classList.remove("show-file-item");    
     }
 })
 
@@ -66,7 +78,8 @@ viewItem.addEventListener("click", toggleFullScreen);
 
 function toggleFullScreen() {
     if ((document.fullScreenElement && document.fullScreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-       if (document.documentElement.requestFullScreen) {
+        viewItem.textContent = "Normal Screen";
+        if (document.documentElement.requestFullScreen) {
           document.documentElement.requestFullScreen();
        } else if (document.documentElement.mozRequestFullScreen) {
           document.documentElement.mozRequestFullScreen();
@@ -74,6 +87,7 @@ function toggleFullScreen() {
           document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
        }
     } else {
+       viewItem.textContent = "Full Screen";
        if (document.cancelFullScreen) {
           document.cancelFullScreen();
        } else if (document.mozCancelFullScreen) {
