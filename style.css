@@ -168,7 +168,8 @@ body {
     /* color: #569cd6; */
 }
 
-.answer-tag {
+.answer-tag,
+.help-tag {
     color: #569cd6;
 }
 
@@ -219,6 +220,10 @@ body {
 .show-view-item,
 .show-help-item {
     display: block;
+}
+
+.comment-guide-mobile {
+    display: none;
 }
 
 @media only screen and (max-width: 1408px) {
