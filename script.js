@@ -223,11 +223,33 @@ searchInput.addEventListener("keypress", (e)=> {
         const index = htmlTags.indexOf(inputValue);
         if(htmlTags.includes(inputValue)) {
             guessedTags.push(inputValue);
-            answerTag.innerText += `${lineNumber} ${"<"}${inputValue}${">"}` + "\n";
+
+            const lineSpan = document.createElement("span");
+            lineSpan.classList.add("base-tag-color");
+            lineSpan.textContent = lineNumber;
+
+            const openTagSpan = document.createElement("span");
+            openTagSpan.classList.add("base-tag-color");
+            openTagSpan.textContent = "<";
+
+            const closeTagSpan = document.createElement("span");
+            closeTagSpan.classList.add("base-tag-color");
+            closeTagSpan.textContent = ">";
+
+            const inputValueSpan = document.createElement("span");
+            inputValueSpan.textContent = inputValue;
+
+            answerTag.appendChild(lineSpan);
+            answerTag.appendChild(document.createTextNode(" "));
+            answerTag.appendChild(openTagSpan);
+            answerTag.appendChild(inputValueSpan);
+            answerTag.appendChild(closeTagSpan);
+            answerTag.appendChild(document.createElement("br"));
+
             htmlTags.splice(index, 1);
             lineNumber++
             arrayNumber--;
-            tagCount.innerText--;
+            tagCount.innerText = arrayNumber;
         }
         searchInput.value = "";
     }
