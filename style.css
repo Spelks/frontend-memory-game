@@ -5,6 +5,10 @@
     text-decoration: none;
 }
 
+a { 
+    color: inherit; 
+}
+
 body,
 .top-bar,
 .top-logo,
@@ -16,7 +20,7 @@ body,
 }
 
 .main-container {
-    margin-top: 38.9px;
+    margin-top: 38.9px; 
 }
 
 body {
@@ -32,13 +36,13 @@ body {
     border-bottom: 1px solid #2b2b2b;
     padding: 5px 10px;
     justify-content: space-between;
-    align-items: center;
     position: fixed;
     width: 100%;
     z-index: 9;
 }
 
-.top-logo {
+.top-logo,
+.top-bar {
     align-items: center;
 }
 
@@ -163,14 +167,16 @@ body {
 }
 
 .comment-number,
-.number-tag {
+.base-tag-color {
     color: #6e7681;
-    /* color: #569cd6; */
 }
 
-.answer-tag,
-.help-tag {
+.answer-tag {
     color: #569cd6;
+}
+
+.help-tag {
+    color: #9cdcfe;
 }
 
 /* class to toggle explorer bar on/off */
@@ -208,6 +214,7 @@ body {
     bottom: 60px;
     left: 20px;
     overflow: hidden;
+    width: 250px
 }
 
 .file-item:hover,
