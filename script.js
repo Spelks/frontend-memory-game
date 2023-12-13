@@ -20,7 +20,7 @@ const outputContainer = document.querySelector(".output-container");
 
 currentDate.textContent = new Date().getFullYear();
 viewItem.textContent = "Full Screen";
-helpItem.textContent = "Add Remaining";
+helpItem.textContent = "Show Remaining";
 
 let helpActive = false;
 
@@ -28,10 +28,10 @@ helpItem.addEventListener("click", ()=> {
     htmlTags.forEach(tag => {
         if(!helpActive) {
             helpTag.innerText += `${"<"}${tag}${">"}` + "\n";
-            helpItem.textContent = "Remove Remaining";
+            helpItem.textContent = "Hide Remaining";
         } else {
             helpTag.innerText = "";
-            helpItem.textContent = "Add Remaining";
+            helpItem.textContent = "Show Remaining";
         }
     })
     helpActive = !helpActive;
@@ -218,7 +218,7 @@ let arrayNumber = htmlTags.length;
 let lineNumber = 1;
 
 searchInput.addEventListener("keypress", (e)=> {
-    if (e.key === "Enter") {
+    if ((e.key === "Enter" || e.keyCode === 13 || e.which === 13)) {
         const inputValue = searchInput.value.toLowerCase().replace(/[^a-z1-6]/g, "");
         const index = htmlTags.indexOf(inputValue);
         if(htmlTags.includes(inputValue)) {
